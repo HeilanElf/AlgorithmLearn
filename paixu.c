@@ -20,11 +20,21 @@ void quickSort(int * arr,int low ,int heigh){
 }
 
 int main(){
-    int arr[]={1,2,34,3,7,454,6,89,34};
-    int len_arr=sizeof(arr)/sizeof(arr[0]);
-    quickSort(arr,0,len_arr-1);
-    for(int i=0;i<len_arr;i++){
-        printf("%d ",arr[i]);
+    int arr[100];
+    printf("请输入要排序数组：\n");
+    int i=0,num;
+    while(scanf("%d",&num)==1&&getchar()!='\n'){
+        arr[i++]=num;
+    }
+    arr[i++] = num;
+    printf("输入的整数序列为：\n");
+    for (int j = 0; j < i; j++) {
+        printf("%d ", arr[j]);
+    }
+    printf("\n");
+    quickSort(arr,0,i-1);
+    for(int k=0;k<i;k++){
+        printf("%d ",arr[k]);
     }
     return 0;
 }
